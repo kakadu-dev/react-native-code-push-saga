@@ -21,6 +21,6 @@
   "peerDependencies": {
     "react-native": "*",
     "react-native-code-push": "*",
-    "redux-saga": "*"
+    "redux-saga": ">= 1.0.0"
   }
 }

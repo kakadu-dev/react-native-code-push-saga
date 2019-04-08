@@ -1,8 +1,8 @@
 import { AppState, AsyncStorage } from "react-native";
 import { sync } from "react-native-code-push";
 
-import { eventChannel, delay } from "redux-saga"
-import { call, race, take } from "redux-saga/effects"
+import { eventChannel } from "redux-saga"
+import { call, delay, race, take } from "redux-saga/effects"
 
 /**
  * Constructs a Saga channel that allows subscribers
@@ -38,7 +38,7 @@ function* delaySync(delayByInterval, delayByAction) {
     yield call(AsyncStorage.setItem, codePushDelayKey, "VALUE");
 
     let delayEvents = {
-      interval: call(delay, delayByInterval * 1000)
+      interval: delay(delayByInterval * 1000)
     };
 
     // If the consumer specified an action to cancel the delay
