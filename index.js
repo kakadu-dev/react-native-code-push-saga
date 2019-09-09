@@ -102,7 +102,7 @@ export default function* codePushSaga(options = {}) {
   }
 
   if (options.syncOnInterval > 0) {
-    syncEvents.interval = call(delay, options.syncOnInterval * 1000);
+    syncEvents.interval = delay(options.syncOnInterval * 1000);
   }
 
   // Kick off the "event loop" that will continue
